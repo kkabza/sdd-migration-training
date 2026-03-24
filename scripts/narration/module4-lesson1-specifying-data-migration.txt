@@ -1,0 +1,7 @@
+Data migrations fail for specific, predictable reasons. Schema assumptions — "we thought it was the same." Business logic hidden in stored procedures, triggers, and views. Data quality issues only visible at scale. And missing validation criteria — "it migrated, but is it correct?"
+
+The spec-driven approach to data migration follows a clear sequence. First, inventory the data layer — tables, views, stored procedures, triggers, and relationships. Then specify each object — what it holds, what depends on it, what it computes. Map source to target — schema mapping as a formal spec artifact. Specify transformations — data type changes, encoding, collation, restructuring. And define validation criteria — how to prove the data migrated correctly.
+
+Validation criteria serve as acceptance criteria for the data migration. Row count parity confirms nothing was lost. Checksum comparison on key tables verifies data integrity. Business rule verification ensures calculated fields produce the same results. And referential integrity checks confirm that relationships survived the migration.
+
+One of the most important decisions in any data migration is the stored procedure question. Do you migrate stored procedure logic to the cloud database, or extract it to the application layer? The answer isn't always the same. Spec both options, compare the tradeoffs — performance versus maintainability, data locality versus separation of concerns — and document the decision with rationale.

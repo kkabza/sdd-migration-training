@@ -1,0 +1,9 @@
+This is the final simulation exercise. You'll finalize all Northwind migration artifacts and present your spec-driven migration to the class.
+
+Take stock of everything you're presenting. The constitution that defines your migration standards. The AS-IS spec, including the Day 3 surprise discovery. The TO-BE spec, updated to accommodate the surprise. The migration plan with its wave structure. The data migration spec with mappings and validation criteria. Integration contracts for every external touchpoint. The task list with rollback criteria. And validation criteria proving behavior parity.
+
+Run speckit.analyze one final time for the full cross-artifact consistency check before presenting.
+
+Each team gets fifteen minutes to walk through their spec-flow — from cold code to migration-ready spec set. How did you handle the surprise? What changed in your specs and plan? What didn't need to change? What would you add to the constitution for the next migration? And what reusable IP came out of this exercise?
+
+The evaluation criteria cover everything: whether the AS-IS spec captures legacy behavior comprehensively including the surprise, whether the TO-BE spec accounts for every AS-IS behavior, whether there's traceability from every TO-BE item to an AS-IS item, whether the plan has validation at each wave boundary, whether data migration and integration specs are complete, whether the surprise was absorbed through spec updates rather than ad-hoc fixes, and whether everything passes the analyze consistency checks.

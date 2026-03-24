@@ -1,0 +1,7 @@
+Before committing to a migration design, you need to review the cloud target architecture against the Well-Architected Framework pillars.
+
+Reliability: Is the target more resilient than the legacy system? Is the disaster recovery strategy defined? Security: Is identity modernized? Is data encrypted at rest and in transit? Cost Optimization: Is the target right-sized for day one? Are you using consumption-based pricing where appropriate? Operational Excellence: How will the team operate this? Is CI/CD in place? Monitoring? Runbooks? And Performance Efficiency: Does the target meet current baselines? Can it scale for future growth?
+
+There are common migration architecture mistakes to watch for. Rehosting everything and calling it "cloud-native" — that's not migration, that's moving the same problems to a more expensive location. Over-engineering the day-one architecture for hypothetical future scale. Migrating without establishing monitoring first — if you can't see what's happening, you can't know if something's wrong. And ignoring operational readiness — the question of "who runs this after cutover?" needs an answer before cutover, not after.
+
+In the group exercise, each team presents their TO-BE spec. The class reviews against the five pillars and identifies the top three risks per team's migration design. The key discussion question: are the risks in the technology choices, or in the spec coverage? More often than not, the answer is spec coverage.

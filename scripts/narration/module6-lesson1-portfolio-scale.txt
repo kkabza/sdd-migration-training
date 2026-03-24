@@ -1,0 +1,9 @@
+What you just did with Northwind is the process for one application. A migration programme has dozens or hundreds. How do you scale this?
+
+The migration factory model has three lines. The Assessment line handles analysis, reverse-engineering, and AS-IS spec creation — producing behavior inventories, dependency maps, and formal specifications. The Architecture line handles TO-BE specification, planning, and review — producing cloud target specs, migration plans, and integration contracts. And the Execution line handles tasks, implementation, and validation — producing task lists, generated code, and validation results.
+
+The real power comes from reusable IP. Every migration makes the next one faster. Constitution templates become organizational migration standards, not per-project documents. Spec patterns for common application archetypes become templates. Analysis prompts get standardized for consistent code analysis across teams. Validation libraries provide reusable test patterns for common scenarios. And architecture decision records build a catalog of decisions for reference.
+
+This mirrors how AI Migrate builds IP — patterns designed as reusable components, use cases from one customer harvested for reuse across others. Spec-flow achieves the same through artifacts.
+
+The constitution is the programme governance lever. Update the constitution, and all future migrations inherit the updated standards. Consistency across migrations is more valuable than speed on any individual one. And every spec you write is IP that survives staff turnover, customer changes, and programme evolution.

@@ -1,0 +1,7 @@
+The instructor hands each team a sealed envelope. Inside: a description of a previously unknown integration or behavior that nobody mentioned during the entire migration process.
+
+Maybe there's a nightly batch job that exports data to an ERP system via flat files — and it's not in the codebase. It's a script running on the server via Task Scheduler. Or maybe two other applications share this database, reading from tables your system writes to. Or there's an undocumented API endpoint that a mobile app calls — and the mobile team didn't tell anyone. Or a business rule in the legacy system was never actually implemented — the team manually processes exceptions, and now you need to automate it.
+
+This is the moment that derails most migrations. But not this one. Here's the exercise: don't panic — spec it. Add the newly discovered item to the AS-IS spec. Assess the impact — does this change the TO-BE spec? The plan? The wave ordering? Run speckit.clarify on the updated spec to see what new ambiguities surfaced. Update the TO-BE spec, plan, and contracts as needed. Run speckit.analyze to confirm everything still holds together. And adjust the task list — where does this new work fit in the waves?
+
+Here's the key lesson. In a spec-driven migration, surprises are just new spec items. The pipeline absorbs them through a controlled change process with traceable impact. Without specs, a surprise like this derails the project — emergency meetings, finger-pointing, schedule panic. With specs, it's an update, a re-analysis, and an adjusted plan.

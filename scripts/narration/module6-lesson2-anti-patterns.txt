@@ -1,0 +1,9 @@
+Let's look at the most common migration anti-patterns and how the spec-driven pipeline prevents each one.
+
+Skip the Spec: teams migrate based on assumptions. The pipeline prevents this because it won't produce a plan without a spec. Big Bang Cutover: everything breaks at once. Prevented by the wave structure in the plan, with each wave validated independently. Tribal Knowledge: one person leaves and the migration stalls. Prevented because the spec captures the knowledge — the person becomes a reviewer, not a single point of failure.
+
+Feature Creep: "while we're at it, let's also add these features." Prevented because the TO-BE spec scope is locked — enhancements are a separate spec. Missing Integrations: "we forgot about the file drop to SAP." Prevented by mandatory dependency map and integration contracts as required artifacts. No Rollback: can't recover if cutover fails. Prevented by rollback criteria in every task and cutover plans in every plan.
+
+Gold-Plating: over-engineering the cloud target for hypothetical future needs. Prevented by constitution-enforced simplicity gates and day-one constraints. Invisible Changes: nobody knows what changed. Prevented because the AS-IS to TO-BE delta is the explicit, traceable change record. Constitution Drift: standards evolve but aren't captured. Prevented by quarterly constitution reviews at programme level. And Day 3 Surprise Panic: unknown discovery derails the project. Prevented because specs absorb change — add to AS-IS and ripple through the pipeline.
+
+Each of these anti-patterns is a different symptom of the same root cause: insufficient specification. The pipeline prevents them structurally — not by relying on heroic individual effort.

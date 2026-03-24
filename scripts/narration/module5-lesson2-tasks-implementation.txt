@@ -1,0 +1,13 @@
+Time to generate the migration task list and produce implementation scaffolding for the first two waves.
+
+First, run speckit.tasks to generate the sequenced migration task list. Review the ordering carefully: does it follow wave dependencies? Are validation tasks present between waves? Can anything be parallelized safely?
+
+Then run speckit.implement for Wave 0 — the foundation wave. This produces infrastructure scaffolding, identity configuration, and monitoring setup. The foundation wave is about getting the cloud environment ready to receive migrated workloads.
+
+Next, run speckit.implement for Wave 1 — the data layer. This generates data migration scripts and data validation tests. The data wave ensures the database is migrated, verified, and ready before any application code moves.
+
+Review everything generated against the constitution. Are the constraints followed? Are the quality gates addressed? Is everything traceable back to spec items?
+
+The key insight in this exercise is that implementation generation from specs isn't about AI writing all your code. It's about generating scaffolding, configurations, migration scripts, and test harnesses that are structurally correct because they're derived from validated specs. The human work is refinement, not creation from scratch.
+
+The deliverable is a generated task list and implementation scaffolding for Waves 0 and 1.

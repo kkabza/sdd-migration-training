@@ -1,0 +1,9 @@
+Not every migration needs the same level of specification. The amount of spec work varies by migration strategy, and understanding this helps you invest effort where it matters most.
+
+At one end of the spectrum, retiring an application needs no spec work — just the decision rationale. Retaining requires minimal documentation of the current state. Rehosting needs a light touch — infrastructure mapping and a dependency list. Replatforming requires medium depth, focusing on the platform-specific adaptation points.
+
+Then we get to where spec-driven migration really shines. Refactoring requires a full behavior spec plus architecture redesign. Re-architecting goes even deeper — domain decomposition and a new architecture. Rebuilding needs a full behavioral specification — what the system does, not how, because the implementation is entirely new. And replacing with a SaaS product requires a gap analysis — what the SaaS covers versus what needs custom work.
+
+The decision process is straightforward: run a lightweight spec pass first to understand complexity. Then choose the migration strategy based on evidence. Trying to choose the strategy before understanding the system is a common anti-pattern that leads to costly mid-migration strategy changes.
+
+You can't confidently choose the right strategy until you've specified what the system actually does. The spec informs the strategy — not the other way around.

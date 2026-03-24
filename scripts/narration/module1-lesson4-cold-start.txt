@@ -1,0 +1,11 @@
+Welcome to Northwind Global Services. Here's the code repository. Here's a one-page README from twenty-nineteen. The previous architect left the company. Good luck.
+
+That's your starting point. Rather than isolated labs, the entire training is structured around a single progressive simulation. You receive a legacy application now and work it through the full spec-driven pipeline over three days.
+
+The Northwind legacy application has every challenge you'd expect. A user interface with multi-page web forms and undocumented workflows. A business logic layer with rules scattered across code, configuration, and comments. A data layer with relational databases and stored procedures containing business logic. Batch processing with scheduled jobs that nobody documented. Integrations through file drops, queues, and API calls based on tribal knowledge. And legacy authentication with on-premises directories and shared credentials.
+
+This simulation is technology-agnostic by design. The process we're learning works whether the legacy system is .NET, Java, COBOL, Python, or anything else. We're focused entirely on the spec-flow process — how you analyze, specify, clarify, plan, and drive the migration.
+
+In this exercise, you'll initialize a spec-kit migration project, write a migration constitution covering quality gates and compliance constraints, explore the Northwind codebase for twenty minutes, document your first impressions using a structured template, and then compare observations across teams to see who found what.
+
+The instructor will then reveal what's actually in the codebase. How much did each team find in twenty minutes? What did everybody miss? This sets up the critical need for the systematic analysis we'll cover in Module 2.

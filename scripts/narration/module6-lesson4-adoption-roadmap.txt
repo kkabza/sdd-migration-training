@@ -1,0 +1,9 @@
+Adoption of spec-driven migration follows four phases. The pilot phase: apply the full spec-flow to one real application and document what works and what doesn't. Templatize: harvest IP from the pilot — constitution templates, spec templates, analysis prompts, and validation patterns. Scale: train the delivery team on the process, apply templates to three to five applications, and refine. And Factory: a full migration factory with continuous IP harvesting, governance metrics, and programme reporting.
+
+Spec-driven migration works alongside existing tools. It complements AI Migrate where it's deployed — strengthening the specification layer that AI Migrate orchestrates. GitHub Copilot serves as the universal accelerator with no tenant deployment needed. And spec artifacts integrate with Migration Cockpit for tracking and reporting.
+
+The business case is compelling. AI-assisted assessment delivers a thirty to fifty percent productivity improvement. Quality improves because the spec was validated before implementation, leading to fewer post-migration incidents. Knowledge is captured in specs that survive staff turnover — critical for multi-year programmes. And reusable IP means each migration makes the next one faster and more consistent.
+
+The recommended next steps are practical. Select a real application for a pilot migration. Write the migration constitution for your programme. Run the full spec-flow from analysis through implementation. Present the spec pair to stakeholders for sign-off before building anything. After the first migration, harvest the IP, update the constitution, templatize the patterns. And repeat.
+
+AI Migrate and spec-driven migration are complementary approaches. Together, they deliver consistent, high-quality migration outcomes at any scale.

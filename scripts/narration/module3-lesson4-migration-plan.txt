@@ -1,0 +1,9 @@
+It's time to generate the complete migration plan from the constitution, AS-IS spec, and TO-BE spec.
+
+Running speckit.plan reads all three documents and generates a comprehensive migration plan. But the generated plan needs your review and refinement for migration-specific concerns — wave structure, data migration strategy, integration rewiring approach, cutover procedures, and the risk register.
+
+The plan produces several key artifacts. Plan.md contains the target architecture, wave structure, and phasing strategy. Data-migration.md defines schema mapping, transformation rules, and validation criteria. The contracts folder holds interface contracts for every migrated integration. Cutover-plan.md specifies the go-live sequence, rollback procedures, and validation checklist. And risk-register.md catalogs risks with their mitigations and contingencies.
+
+After refining the plan, you run speckit.analyze to cross-check everything — the plan against the specs, the specs against the constitution. Does the plan address every item in the TO-BE spec? Is the wave ordering safe — foundations before features? Are there dependencies between waves not reflected in the ordering?
+
+The deliverable is a complete migration plan with wave structure, data migration strategy, integration approach, and cutover procedures — all generated from and traceable to the spec pair. At the end of Day 2, you have a constitution, an AS-IS spec, a TO-BE spec, a migration plan, data migration spec, and integration contracts. All traceable. All cross-checked. Tomorrow: execution — and a surprise.

@@ -1,0 +1,7 @@
+Every legacy application has dependencies across multiple dimensions. Missing any dimension means the migration plan has a gap that will surface at the worst possible time.
+
+Code dependencies include libraries, packages, frameworks, and shared components. The migration risk here is version incompatibilities and deprecated APIs. Data dependencies encompass databases, stored procedures, views, and cross-database references — with risks around schema drift and business logic that lives in the database layer. Integration dependencies involve APIs, message queues, file shares, and external systems, where interface contracts, timing, and format changes create risk. Infrastructure dependencies cover runtime platforms, middleware, scheduling, and messaging — with platform-specific features and licensing concerns. And identity dependencies include directory services, service accounts, and certificates, requiring careful attention to authentication modernization and secret rotation.
+
+The dependency map is a formal spec artifact that captures what depends on what, which dependencies are internal versus external, which are easy to migrate versus requiring redesign, and risk scoring from low through medium and high to blocking.
+
+This is the second most important migration artifact after the behavior spec. Miss a dependency and the migration fails in production. There are no partial points for dependency mapping — every missed connection is a potential production incident waiting to happen.

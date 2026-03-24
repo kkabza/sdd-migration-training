@@ -1,0 +1,9 @@
+Integration points cross system boundaries, which makes them the highest-risk items in any migration. External systems don't care about your migration timeline — they care that the interface works.
+
+There are five types of integration you'll encounter. File-based integrations with drops, pickups, and batch transfers. Message-based integrations using queues, topics, and events. API integrations with synchronous calls and webhooks. Database-level integrations through linked servers, shared tables, and replication. And identity integrations including single sign-on and service-to-service authentication.
+
+Every integration gets a formal contract in the contracts folder. Each contract specifies the input and output formats — what does each side expect? The timing and SLAs — is it real-time or batch, and within what window? Error handling — what happens when it fails? And the Anti-Corruption Layer — an adapter between old and new systems.
+
+The Anti-Corruption Layer is a critical migration pattern. During migration, you'll often run old and new systems in parallel. The Anti-Corruption Layer translates between interfaces so that external systems can continue working during the parallel-run period without modification. It absorbs the differences between legacy and cloud interfaces so that neither side needs to change until the migration is complete.
+
+Getting integrations wrong doesn't just break your system — it breaks your partners' systems too. That's why every integration needs a contract, and every contract needs validation tests.

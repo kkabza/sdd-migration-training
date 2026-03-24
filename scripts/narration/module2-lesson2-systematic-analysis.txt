@@ -1,0 +1,9 @@
+Now it's time to put those analysis prompts into practice. Using the structured approach from the previous lesson, you'll systematically investigate the Northwind codebase with GitHub Copilot.
+
+Your analysis tasks are to identify all domain entities and how they relate. Extract business rules with source locations and confidence ratings. Discover automated processes — batch jobs, scheduled tasks, triggers — documenting what they do and when. And catalog every integration point — what talks to what, in what format, on what schedule.
+
+For every behavior you discover, you'll create a structured entry in the Legacy Behavior Inventory. Each entry captures the behavior name, its type — whether it's user-facing, automated, or an integration — a description of what it does, where in the code you found it, your confidence level, whether it needs subject matter expert validation, and what it depends on.
+
+Items you mark as needing SME validation become your interview questions for the clarify step. Compare your inventory with other teams — different analysis approaches surface different things. At this stage, coverage matters more than depth. You want to find as many behaviors as possible before diving deep into any one of them.
+
+The deliverable is a complete Legacy Behavior Inventory with confidence ratings for every item discovered.

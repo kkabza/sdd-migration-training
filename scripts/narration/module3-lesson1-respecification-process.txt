@@ -1,0 +1,9 @@
+The core migration design question is deceptively simple: for each thing the legacy system does, how should the cloud system do it?
+
+The re-specification workflow starts by taking each behavior from the AS-IS spec. For each one, you decide: keep as-is, modify, replace, or remove. Then you specify the cloud-native equivalent, add cloud-specific requirements like scaling, availability, monitoring, and security, and document the rationale for every decision.
+
+Changes fall into distinct categories. Some behaviors stay the same with the same approach — you copy from the AS-IS spec and note "unchanged." Some behaviors stay the same but use a different platform — you rewrite the implementation section while the behavior description stays identical. Some behaviors need redesign — new architecture description but with behavior parity requirements. Some are entirely new cloud capabilities like monitoring and auto-scaling. And some capabilities get removed, always with documented rationale.
+
+The cloud target spec is the contract the customer signs off on before implementation begins. Behavior parity first, enhancement second — never mix migration with new feature requests in the same spec.
+
+The TO-BE spec should be readable independently. Someone who never saw the legacy system should be able to understand what they're building. Every architectural decision gets a rationale — no "we just picked this." And the delta between the AS-IS and TO-BE specs IS the migration scope — if it's not in the delta, it's not being migrated.

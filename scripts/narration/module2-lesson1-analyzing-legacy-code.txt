@@ -1,0 +1,7 @@
+Legacy codebases share common analysis challenges regardless of technology stack. Large codebases with decades of accumulated logic. Business rules embedded in unexpected places — database logic, configuration files, utility classes, even comments. Implicit dependencies through shared databases, file drops, message queues, and scheduled jobs. And tribal knowledge that lives in people's heads, not in documentation.
+
+The key to effective analysis is structured prompts that produce structured output. Consistent prompts lead to consistent analysis, which leads to consistent specs. This is the same principle behind AI Migrate's well-defined assessment patterns — quality comes from structure.
+
+When using GitHub Copilot for analysis, you use different prompt types for different purposes. Architecture discovery prompts to understand the high-level structure. Module analysis prompts to understand individual components and their dependencies. Business rule extraction prompts to pull out the logic that matters. Data flow tracing to follow information through the system. And integration discovery to find all external system connections.
+
+There are critical principles to follow. AI accelerates the reverse-engineering, but the architect validates it. Never trust extracted business rules without verification — always mark confidence levels. Focus on analyzing behavior, not just structure — what does the system DO, not just how it's organized. And write everything down as spec artifacts, because understanding that isn't captured is understanding that's lost.

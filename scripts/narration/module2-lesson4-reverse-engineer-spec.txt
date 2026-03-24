@@ -1,0 +1,11 @@
+Now comes the critical step — combining the Behavior Inventory and Dependency Map into a formal specification. This is the AS-IS spec, and it captures everything the legacy system does.
+
+Using speckit.specify, you'll formalize all user stories, all automated behaviors, all integration contracts, non-functional characteristics, and known limitations and technical debt into a structured specification document.
+
+Then you run speckit.clarify, which is where the pipeline really earns its keep. The clarify step surfaces gaps and ambiguities you didn't notice. It might tell you that a behavior references a data source not in the dependency map. Or that two business rules appear to contradict each other. Or that no validation criteria were specified for an integration.
+
+Remaining unknowns get marked with "needs SME validation" — these become agenda items for stakeholder conversations, not embarrassing discoveries during cutover.
+
+After the exercise, compare specs across teams. Are different teams describing the same system? What did some teams capture that others missed? This demonstrates exactly why the clarify step exists — it catches what humans overlook.
+
+The deliverable is a reverse-engineered spec.md — the AS-IS specification. This is the migration's foundation artifact. Everything that follows — the cloud target spec, the migration plan, the task list — all trace back to this document. Get this wrong and everything built on top of it is wrong too.

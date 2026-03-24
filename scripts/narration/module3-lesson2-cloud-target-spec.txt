@@ -1,0 +1,9 @@
+Working from your AS-IS spec, it's time to create the TO-BE cloud target specification and validate it through the pipeline.
+
+For each AS-IS behavior, you'll create a TO-BE entry and mark it as unchanged, replatformed, refactored, rearchitected, or replaced. You'll specify the target architecture approach — not specific cloud services, but the approach. Then add cloud-native requirements: availability targets, scaling approach, security model, and observability.
+
+After writing the spec, you run three pipeline commands. Speckit.specify formalizes the cloud target spec. Speckit.clarify surfaces gaps you might have missed. And speckit.analyze performs the AS-IS to TO-BE cross-check — this is where the pipeline verifies that your migration design is complete.
+
+The analyze step checks three things. Coverage: is everything from the legacy spec addressed in the cloud target? Consistency: do the architectural decisions align with the constitution? And traceability: can you trace every TO-BE item back to an AS-IS item?
+
+The deliverable is a cloud target spec.md — the TO-BE specification. Combined with the AS-IS spec from yesterday, this pair defines the complete migration. Two documents that together tell the full story: what the system does today, and what it will do in the cloud.

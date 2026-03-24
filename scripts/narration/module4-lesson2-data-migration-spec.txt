@@ -1,0 +1,9 @@
+In this simulation, you'll analyze the Northwind database layer and produce a complete data migration specification.
+
+Using Copilot, you'll analyze every stored procedure, trigger, and view in the Northwind database layer. Then create a data migration spec as part of data-migration.md. You'll produce schema mappings — source object to target object for every table, view, and procedure. Document transformation rules — what changes and why. Make the stored procedure decision for each one — does the logic stay in the database or move to the application layer? Define specific, testable validation criteria for data correctness. And run speckit.clarify on the data migration spec to surface any mapping gaps.
+
+The schema mapping is where you discover the real complexity. Column types that don't translate cleanly. Collation differences. Default values that embed business logic. Auto-incrementing keys and sequences. Cross-database references that need to be unwound.
+
+The key to this exercise is completeness. Every database object needs a mapping entry. Every stored procedure needs a decision. Every transformation needs a rule. And every rule needs a validation test.
+
+The deliverable is a complete data-migration.md with mappings, transformations, stored procedure decisions, and validation criteria. This document, combined with the plan and specs, gives you everything needed to execute the data migration with confidence.

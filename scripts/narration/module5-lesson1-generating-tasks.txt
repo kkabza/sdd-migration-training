@@ -1,0 +1,9 @@
+Migration tasks differ from greenfield tasks in several important ways. Tasks reference both the AS-IS and TO-BE specs. Ordering follows the wave structure from the plan. Each task includes rollback criteria. And validation tasks are interspersed throughout — not saved for the end.
+
+The ordering principles are critical. Foundation before features — infrastructure, identity, and monitoring come first. Data before application — the database must be ready before the application can use it. Internal before external — get the system working before rewiring integrations. And validate at every boundary, not just at the end.
+
+This is wave-based execution. Each wave produces a deployable, testable increment. If Wave 1 fails validation, you don't proceed to Wave 2. The spec and plan tell you exactly what each wave must deliver and exactly how to verify it.
+
+Running speckit.tasks reads the constitution, both specs, and the plan, then generates a sequenced list of migration tasks. Each task references which spec items it implements, which wave it belongs to, what its rollback criteria are, and what validation must pass before moving on.
+
+The power of this approach is that the task list isn't a guess — it's derived directly from the specs. If a spec item changes, the affected tasks are identifiable. If a wave fails validation, you know exactly which spec items are at risk.

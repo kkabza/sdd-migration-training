@@ -1,0 +1,9 @@
+The standard SDD pipeline maps directly to migration work. Every step has a greenfield purpose and a migration-specific purpose.
+
+The constitution defines how we migrate — standards, constraints, and quality gates. The specify step captures what the legacy system does through a reverse-engineered spec. Clarify validates that reverse-engineered spec against subject matter expert knowledge. Plan lays out how to re-architect — the target architecture, phasing, and data strategy. Analyze ensures cross-artifact consistency and legacy-to-cloud traceability. Tasks generates the ordered migration execution steps with rollback criteria. And implement generates cloud-native code and infrastructure from the spec.
+
+In practice, the migration flow looks like this: First, discover — analyze legacy code, infrastructure, and dependencies. Then reverse-engineer — generate a spec of what the legacy system does. Next, clarify with subject matter experts and flag any gaps. Then re-specify — write the cloud target spec with the same behaviors but a new architecture. Plan out the migration waves, data strategy, integration rewiring, and cutover. And finally execute — tasks, implement, validate, iterate.
+
+The critical concept here is the spec pair. Every migration produces two specs — the AS-IS spec capturing what exists today, and the TO-BE spec describing what comes next. The delta between those two specs IS the migration.
+
+Specify the AS-IS before designing the TO-BE. Two specs, one pipeline — the same SDD process handles both. The constitution captures organizational migration standards as reusable constraints. And this process works regardless of source technology, because the spec abstracts away the implementation.

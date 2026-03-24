@@ -1,0 +1,9 @@
+How do you prove that the migrated system does exactly what the legacy system did? That's the validation question, and it has a structured answer.
+
+The validation hierarchy has six levels. Smoke tests prove it deploys and runs — you run these after every deployment. Behavior parity tests prove it does the same thing the legacy system did — you run these for every migrated capability. Data validation proves the data migrated correctly — after every data migration step. Integration tests prove external systems still work — after integration rewiring. Performance tests prove it meets the baseline — before cutover. And user acceptance confirms workflows work for real users — also before cutover.
+
+Writing validation criteria from the spec is straightforward because the spec already describes the expected behavior. Every behavior in the TO-BE spec needs acceptance criteria. "Given this legacy input, the migrated system produces the same output." "This data query returns the same results." "This batch process completes within the same time window."
+
+The traceability chain connects everything. Code traces back to a task, which traces to the plan, which traces to the TO-BE spec, which traces to the AS-IS spec. If something fails in validation, you trace it back through this chain to find where the spec and reality diverged. Then you fix at the spec level, not the code level, and regenerate.
+
+This is the final simulation checkpoint. Write validation criteria for your migrated Northwind system, including the surprise discovery. Run speckit.analyze one final time to confirm full coverage from spec to validation.

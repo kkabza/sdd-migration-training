@@ -1,0 +1,9 @@
+This simulation brings everything together. You'll write formal integration contracts for every Northwind integration point and design the Anti-Corruption Layer.
+
+For every integration point, write a formal contract specifying the input schema, output schema, SLA, and error behavior. Specify the cloud-native replacement approach for each integration. Design the Anti-Corruption Layer for the parallel-run period. Define validation tests — when system A sends X, system B must receive Y. And run speckit.analyze for a full consistency check across all artifacts.
+
+The analyze step at this point is comprehensive. It cross-checks the AS-IS spec against the TO-BE spec, against the plan, against the data migration spec, and against every integration contract. It looks for integrations in the AS-IS spec that don't have contracts. It checks whether the wave ordering accounts for integration dependencies.
+
+At the end of Day 2, take stock of what you have. A constitution defining standards and constraints. An AS-IS spec capturing what the system does today. A TO-BE spec defining what the cloud system will do. A plan with a wave structure and phasing strategy. A data migration spec with mappings, transformations, and validation criteria. And integration contracts for every external touchpoint.
+
+All of this was generated through the SDD pipeline. All cross-checked by speckit.analyze. All traceable from top to bottom. Tomorrow we move to execution — and there's a surprise waiting.
