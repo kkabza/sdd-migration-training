@@ -15,7 +15,13 @@ function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
+    const current = a[i];
+    const next = a[j];
+    if (current === undefined || next === undefined) {
+      continue;
+    }
+    a[i] = next;
+    a[j] = current;
   }
   return a;
 }
@@ -51,7 +57,10 @@ export const LessonQuiz = forwardRef<LessonQuizHandle, Props>(
 
     const answeredCount = Object.keys(revealed).length;
     const correctCount = Object.entries(revealed).filter(
-      ([qi]) => answers[Number(qi)] === shuffled[Number(qi)].correctIndex,
+      ([qi]) => {
+        const question = shuffled[Number(qi)];
+        return question !== undefined && answers[Number(qi)] === question.correctIndex;
+      },
     ).length;
     const allDone = answeredCount === shuffled.length;
 

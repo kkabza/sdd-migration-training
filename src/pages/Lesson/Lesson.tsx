@@ -19,9 +19,10 @@ export function LessonPage() {
   const mod = lessonId ? getModuleForLesson(lessonId) : undefined;
   const day = dayId ? getDayById(dayId) : undefined;
   const adjacent = (courseId && lessonId) ? getAdjacentLessons(courseId, lessonId) : { prev: null, next: null };
+  const lastModuleLesson = mod && mod.lessons.length > 0 ? mod.lessons[mod.lessons.length - 1] : undefined;
 
   // Only show quiz on the last lesson of a module, pooling questions from all lessons
-  const isLastInModule = mod && lesson ? mod.lessons[mod.lessons.length - 1].id === lesson.id : false;
+  const isLastInModule = lesson !== undefined && lastModuleLesson?.id === lesson.id;
   const moduleQuizPool = useMemo<QuizQuestion[]>(() => {
     if (!isLastInModule || !mod) return [];
     return mod.lessons.flatMap(l => l.quiz ?? []);
