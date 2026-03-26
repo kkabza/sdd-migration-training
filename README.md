@@ -1,5 +1,7 @@
 # SDD Migration Training App
 
+[![Azure Static Web Apps CI/CD](https://github.com/kkabza/sdd-migration-training/actions/workflows/azure-static-web-apps-sdd-migration-training.yml/badge.svg)](https://github.com/kkabza/sdd-migration-training/actions/workflows/azure-static-web-apps-sdd-migration-training.yml)
+
 This repo contains the Vite-based frontend for the SDD migration training experience.
 
 ## Local Development
@@ -26,6 +28,8 @@ This app deploys to an existing Azure Static Web App.
 - Resource Group: `SDD-Training`
 - Static Web App: `sdd-migration-training`
 - Production URL: `https://calm-cliff-045bf570f.6.azurestaticapps.net`
+
+Deployment status is visible from the badge above and from the workflow page in GitHub Actions.
 
 The Azure resource was created outside GitHub integration, so deployment is handled by GitHub Actions using a Static Web Apps deployment token.
 
