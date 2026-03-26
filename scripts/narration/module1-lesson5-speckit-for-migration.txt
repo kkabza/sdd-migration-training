@@ -1,0 +1,13 @@
+This is the mandatory tooling lesson. Every student completes it. SpecKit is the required workflow for the migration course because it gives the entire class one shared artifact model and one shared quality gate sequence.
+
+Why is this lab mandatory? Because every student needs the same migration artifact model and review process. SpecKit creates a shared working area instead of a collection of isolated chat transcripts. It gives instructors a repeatable way to review migration outputs across teams. And it supports the full AS-IS to TO-BE to plan to tasks to implementation chain that this course relies on for the remaining two days.
+
+Here is what SpecKit must do for this course. First, initialize a migration-ready workspace with explicit artifacts. Second, capture the constitution with standards, constraints, and validation expectations up front. Third, drive reverse engineering and target design through formal specification commands. And fourth, produce traceable planning and execution artifacts that carry forward across all three days.
+
+The SpecKit command map for the migration course works like this. During course setup, you use specify init and the speckit constitution command to initialize the project and write the migration constitution. During reverse engineering, speckit specify and speckit clarify produce the AS-IS specification and surface validated unknowns. During re-architecture, speckit specify and speckit analyze produce the TO-BE specification with traceability checks. During planning and execution, speckit plan, speckit tasks, and speckit implement generate the wave-based migration plan and implementation scaffolding.
+
+For the mandatory exercise, you will initialize a Northwind migration workspace using SpecKit. You will draft a migration constitution that includes quality gates, compliance constraints, validation expectations, and rollback requirements. You will write down where each major SpecKit command will be used during the rest of the course. And you will confirm that every team member can explain the difference between constitution, AS-IS spec, TO-BE spec, plan, tasks, and implementation outputs in plain language.
+
+The expected deliverable is a SpecKit-initialized migration workspace, a first-pass migration constitution, and a short written explanation of how the command set maps to the migration lifecycle.
+
+The success criterion is simple. If a teammate joins late, they should be able to open the workspace and understand the constitution, the artifact sequence, and what comes next without replaying a chat history.

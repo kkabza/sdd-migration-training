@@ -148,6 +148,78 @@ export const lessonQuizzes: Record<string, QuizQuestion[]> = {
     },
   ],
 
+    'm-lesson-1-5': [
+      {
+        question: 'Why is SpecKit the mandatory tool in this migration course?',
+        options: [
+          'Because it is the only tool that can run in VS Code',
+          'Because it gives the class one shared migration artifact chain and one consistent quality-gate sequence',
+          'Because OpenSpec and B-MAD cannot work on brownfield systems',
+          'Because SpecKit replaces the need for architecture or planning',
+        ],
+        correctIndex: 1,
+        explanation: 'SpecKit is mandatory because the course depends on a shared migration artifact chain: constitution, AS-IS spec, TO-BE spec, plan, tasks, and implementation scaffolding.',
+      },
+      {
+        question: 'Which SpecKit command establishes migration standards and quality constraints first?',
+        options: [
+          '/speckit.tasks',
+          '/speckit.specify',
+          '/speckit.constitution',
+          '/speckit.implement',
+        ],
+        correctIndex: 2,
+        explanation: '/speckit.constitution comes first because it encodes the standards, constraints, quality gates, and guardrails the rest of the migration must follow.',
+      },
+      {
+        question: 'What is the expected deliverable from the mandatory SpecKit lab?',
+        options: [
+          'A finished cloud deployment',
+          'A fully implemented migration',
+          'An initialized migration workspace, a first-pass constitution, and a command-to-lifecycle mapping',
+          'A complete SaaS replacement evaluation',
+        ],
+        correctIndex: 2,
+        explanation: 'The mandatory lab outcome is foundational: a SpecKit-initialized workspace, a first-pass migration constitution, and a clear explanation of how the commands map to the migration lifecycle.',
+      },
+    ],
+
+    'm-lesson-1-6': [
+      {
+        question: 'When is OpenSpec usually the better fit than SpecKit for migration-related work?',
+        options: [
+          'When you need a strict classroom migration pipeline with formal AS-IS and TO-BE artifacts',
+          'When you are doing lighter-weight brownfield change management or post-migration product evolution',
+          'When you need multi-role planning with PM and Architect personas',
+          'When you want to auto-generate infrastructure scaffolding for every migration wave',
+        ],
+        correctIndex: 1,
+        explanation: 'OpenSpec is a better fit for lighter-weight brownfield change management and ongoing product evolution where current-state specs and proposed deltas are the main concern.',
+      },
+      {
+        question: 'When is B-MAD the strongest option among the three tools?',
+        options: [
+          'When you want guided, role-based planning and broader agile collaboration for a larger transformation',
+          'When you want the lightest possible change proposal workflow',
+          'When you need a single canonical migration artifact pipeline for classroom consistency',
+          'When you only need to initialize a repo and write a constitution',
+        ],
+        correctIndex: 0,
+        explanation: 'B-MAD is strongest when guided planning, specialized roles, and broader agile collaboration matter more than a single strict migration pipeline.',
+      },
+      {
+        question: 'Which statement best reflects the course policy for tooling?',
+        options: [
+          'Students may substitute any tool for all required exercises',
+          'OpenSpec is the required path and SpecKit is optional',
+          'SpecKit is mandatory for the core migration workflow; OpenSpec and B-MAD are optional comparison tracks',
+          'B-MAD is required whenever the migration includes architecture work',
+        ],
+        correctIndex: 2,
+        explanation: 'The course uses SpecKit as the required migration workflow. OpenSpec and B-MAD are optional comparison tracks for teams that want to explore alternative tooling models.',
+      },
+    ],
+
   /* ───────── MODULE 2 ───────── */
 
   'm-lesson-2-1': [

@@ -12,13 +12,14 @@ export const migrationDay1Modules: Module[] = [
     dayId: 'm-day-1',
     title: 'The Migration Challenge & Setting Up the Spec Pipeline',
     description:
-      'Understand why migrations fail, how the spec-driven pipeline addresses root causes, and set up the migration project that carries through all 3 days.',
+      'Understand why migrations fail, choose the right tooling model for the job, establish SpecKit as the required migration path, and prepare for the Northwind cold-start simulation.',
     duration: '4 hours',
     objectives: [
       'Identify the root causes of migration failure and trace them to specification gaps',
       'Explain how the SDD pipeline adapts for migration (AS-IS → TO-BE spec pair)',
+      'Choose between SpecKit, OpenSpec, and B-MAD based on migration scope, rigor, and team needs',
       'Choose the appropriate migration strategy based on spec depth requirements',
-      'Initialize a spec-kit migration project and write a migration constitution',
+      'Initialize the mandatory SpecKit migration workflow and produce the first migration artifacts',
     ],
     lessons: [
       /* ---------- Lesson 1.1 ---------- */
@@ -102,11 +103,51 @@ export const migrationDay1Modules: Module[] = [
           {
             type: 'heading',
             level: 3,
+            text: 'What Students Should Learn in This Lesson',
+          },
+          {
+            type: 'list',
+            style: 'unordered',
+            items: [
+              'Why migration failures are usually evidence failures before they become engineering failures',
+              'How to distinguish a tooling problem from a specification problem',
+              'How to explain the business cost of undocumented behavior, hidden dependencies, and late discovery',
+              'How to articulate the case for producing a formal AS-IS specification before choosing a migration path',
+            ],
+          },
+          {
+            type: 'heading',
+            level: 3,
             text: 'Discussion Exercise',
           },
           {
             type: 'text',
             text: 'Share a migration experience where "unknown unknowns" caused problems. What would have been different if somebody had written a formal spec for what the legacy system actually did?',
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'Exercise Guidance',
+          },
+          {
+            type: 'list',
+            style: 'ordered',
+            items: [
+              'Pick one migration or modernization effort your team knows well',
+              'Write down the assumption that turned out to be wrong',
+              'Identify where that assumption should have been captured: behavior, dependency, data, integration, or operational process',
+              'Estimate when the issue was discovered and what it cost in time, rework, or risk',
+              'State what a good specification artifact would have looked like and what decision it would have improved',
+            ],
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'Expected Outcome',
+          },
+          {
+            type: 'text',
+            text: 'By the end of the discussion, each student should be able to explain one concrete example of a migration failure as a missing-spec problem, not just a tooling or execution problem.',
           },
         ],
         quiz: lessonQuizzes['m-lesson-1-1'],
@@ -117,18 +158,33 @@ export const migrationDay1Modules: Module[] = [
         id: 'm-lesson-1-2',
         number: 2,
         moduleId: 'm-module-1',
-        title: 'The Spec-Driven Migration Pipeline',
+        title: 'Tool Selection & the Spec-Driven Migration Pipeline',
         duration: '45 min',
         content: [
           {
             type: 'heading',
             level: 2,
-            text: 'From Greenfield SDD to Migration SDD',
+            text: 'Choose the Right Tool Before You Choose the Workflow',
           },
           { type: 'slideshow' as const, ...lessonSlides['m-lesson-1-2']! },
           {
             type: 'text',
-            text: 'The standard SDD pipeline maps directly to migration work. Every step has a greenfield purpose and a migration-specific purpose:',
+            text: 'This course teaches migration through SpecKit, but architects should understand the broader tool landscape. The key is to match the tool to the migration problem instead of forcing every problem into the same workflow.',
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'Tool Selection Decision Rules',
+          },
+          {
+            type: 'list',
+            style: 'unordered',
+            items: [
+              'Use SpecKit when you need a canonical migration artifact chain: constitution, AS-IS spec, TO-BE spec, plan, tasks, and traceable implementation outputs',
+              'Use OpenSpec when you are evolving an existing product or service and want lightweight brownfield change management with current-state specs plus proposed deltas',
+              'Use B-MAD when the team needs guided planning, multi-role collaboration, architecture coaching, and broader agile workflow support across a larger transformation',
+              'For this training, SpecKit is mandatory because the class must converge on the same migration process and the same deliverable set',
+            ],
           },
           {
             type: 'table',
@@ -165,6 +221,53 @@ export const migrationDay1Modules: Module[] = [
             variant: 'info',
             title: 'The Spec Pair',
             text: 'Every migration produces two specs — the AS-IS spec (what exists) and the TO-BE spec (what comes next). The delta between them IS the migration.',
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'Tooling Options in This Course',
+          },
+          {
+            type: 'text',
+            text: 'This course is built around SpecKit as the primary delivery tool. We introduce OpenSpec and B-MAD so students understand where they fit, when to choose them, and when NOT to substitute them for the core migration workflow.',
+          },
+          {
+            type: 'table',
+            headers: ['Tool', 'Core Model', 'Best Fit for Migrations', 'Less Ideal When', 'Course Position'],
+            rows: [
+              ['SpecKit', 'Linear spec-driven pipeline: constitution -> specify -> clarify -> plan -> analyze -> tasks -> implement', 'Legacy modernization where you need a formal AS-IS/TO-BE spec pair, migration wave planning, and traceability from discovered behavior to implementation', 'You only need a tiny brownfield tweak or want an intentionally fluid process with minimal phase boundaries', 'Primary tool for all required exercises and the default migration path in this course'],
+              ['OpenSpec', 'Lightweight change-driven spec system with current-state specs and proposed changes', 'Brownfield product evolution, incremental changes to an established system, or teams that want lighter-weight ongoing spec discipline after the migration', 'You need a prescriptive migration-learning path centered on reverse engineering and a formal migration artifact chain', 'Optional comparison tool for students who want a lighter brownfield spec workflow'],
+              ['B-MAD', 'Multi-agent agile workflow with PM, architect, developer, QA, and analysis roles', 'Large product or platform transformations where guided planning, architecture collaboration, and team-role workflows matter more than a single canonical migration pipeline', 'You want one tight, prescriptive spec-first workflow for a classroom migration exercise', 'Optional advanced tool for teams that want deeper planning and role-based collaboration'],
+            ],
+          },
+          {
+            type: 'callout',
+            variant: 'tip',
+            title: 'Primary Recommendation',
+            text: 'Use SpecKit when teaching or executing the core migration method. Introduce OpenSpec and B-MAD as optional tracks: OpenSpec for lighter-weight brownfield change management, and B-MAD for larger multi-role planning and program-level coordination.',
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'Lesson Outcome',
+          },
+          {
+            type: 'text',
+            text: 'Students should leave this lesson able to justify why SpecKit is the required tool in this course, while still knowing when OpenSpec or B-MAD would make more sense in a real delivery environment.',
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'Optional Tool Deep-Dive Paths',
+          },
+          {
+            type: 'list',
+            style: 'unordered',
+            items: [
+              'Required path: complete all migration exercises with SpecKit so every student experiences the same artifact chain and quality gates',
+              'Optional OpenSpec path: repeat a small exercise as a change-driven brownfield update to compare lighter-weight iteration against the full migration pipeline',
+              'Optional B-MAD path: use B-MAD for PRD, architecture, or brownfield documentation exercises when the team wants role-based guidance and broader agile planning support',
+            ],
           },
           {
             type: 'heading',
@@ -236,10 +339,193 @@ export const migrationDay1Modules: Module[] = [
         quiz: lessonQuizzes['m-lesson-1-3'],
       },
 
+      /* ---------- Lesson 1.5 ---------- */
+      {
+        id: 'm-lesson-1-5',
+        number: 4,
+        moduleId: 'm-module-1',
+        title: 'Mandatory Lab: SpecKit for Migration',
+        duration: '30 min',
+        content: [
+          { type: 'slideshow' as const, ...lessonSlides['m-lesson-1-5']! },
+          {
+            type: 'callout',
+            variant: 'info',
+            title: 'Required Tooling Lesson',
+            text: 'Every student completes this lesson. SpecKit is the mandatory workflow for the migration course because it gives the class one shared artifact model and one shared quality gate sequence.',
+          },
+          {
+            type: 'heading',
+            level: 2,
+            text: 'What SpecKit Must Do for This Course',
+          },
+          {
+            type: 'list',
+            style: 'unordered',
+            items: [
+              'Create a migration-ready working area with explicit artifacts instead of chat-only reasoning',
+              'Encode migration standards up front through the constitution',
+              'Support the full AS-IS → TO-BE → plan → tasks → implementation chain used across Days 1–3',
+              'Provide a repeatable review model so teams can compare outputs and instructors can assess quality consistently',
+            ],
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'SpecKit Command Map for the 3-Day Migration',
+          },
+          {
+            type: 'table',
+            headers: ['Phase', 'Primary Command', 'What Students Produce'],
+            rows: [
+              ['Course setup', 'specify init + /speckit.constitution', 'Initialized project and migration constitution'],
+              ['Reverse engineering', '/speckit.specify + /speckit.clarify', 'AS-IS specification and validated unknowns'],
+              ['Re-architecture', '/speckit.specify + /speckit.analyze', 'TO-BE specification and traceability checks'],
+              ['Planning', '/speckit.plan + /speckit.analyze', 'Wave-based migration plan and cross-artifact consistency'],
+              ['Execution', '/speckit.tasks + /speckit.implement', 'Migration task list and implementation scaffolding'],
+            ],
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'Mandatory Exercise',
+          },
+          {
+            type: 'list',
+            style: 'ordered',
+            items: [
+              'Initialize a migration workspace for Northwind using SpecKit',
+              'Draft a migration constitution that includes quality gates, compliance constraints, validation expectations, and rollback requirements',
+              'Write down where each major SpecKit command will be used during the rest of the course',
+              'Confirm that every team member can explain the difference between constitution, AS-IS spec, TO-BE spec, plan, tasks, and implementation outputs',
+            ],
+          },
+          {
+            type: 'code',
+            language: 'bash',
+            code: `# Create the migration workspace
+specify init northwind-migration --ai copilot
+
+# Start the mandatory migration artifacts
+/speckit.constitution
+
+# Later in the course, these commands drive the rest of the migration
+/speckit.specify
+/speckit.clarify
+/speckit.plan
+/speckit.analyze
+/speckit.tasks
+/speckit.implement`,
+            caption: 'SpecKit commands students are expected to understand and use in the course',
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'Deliverable',
+          },
+          {
+            type: 'text',
+            text: 'A SpecKit-initialized migration workspace, a first-pass migration constitution, and a short written explanation of how the SpecKit commands map to the migration lifecycle.',
+          },
+        ],
+        quiz: lessonQuizzes['m-lesson-1-5'],
+      },
+
+      /* ---------- Lesson 1.6 ---------- */
+      {
+        id: 'm-lesson-1-6',
+        number: 5,
+        moduleId: 'm-module-1',
+        title: 'Optional Labs: OpenSpec and B-MAD',
+        duration: '30 min',
+        content: [
+          { type: 'slideshow' as const, ...lessonSlides['m-lesson-1-6']! },
+          {
+            type: 'callout',
+            variant: 'tip',
+            title: 'Optional Side Tracks',
+            text: 'These labs are optional. They help experienced teams compare alternative tooling models, but they do not replace the required SpecKit workflow used by the rest of the course.',
+          },
+          {
+            type: 'heading',
+            level: 2,
+            text: 'OpenSpec Optional Lab',
+          },
+          {
+            type: 'text',
+            text: 'Use OpenSpec when you want lighter-weight brownfield change management. Its strength is maintaining current truth and proposed deltas, which is useful after a migration or for tightly scoped brownfield changes.',
+          },
+          {
+            type: 'list',
+            style: 'unordered',
+            items: [
+              'Best fit: an existing system where you want to propose and track focused changes without running a full migration artifact chain',
+              'Good Northwind exercise: capture one current behavior or dependency as a proposed change, such as documenting the nightly order process or clarifying a fragile integration',
+              'Expected outcome: students see how a lighter spec system differs from the prescriptive migration flow taught with SpecKit',
+            ],
+          },
+          {
+            type: 'code',
+            language: 'bash',
+            code: `npm install -g @fission-ai/openspec@latest
+cd northwind-legacy-app
+openspec init
+
+# Example prompt for the optional lab
+/opsx:propose Capture the current behavior of the nightly order processing job and identify migration risks for moving it to the cloud.`,
+            caption: 'OpenSpec optional lab starter commands',
+          },
+          {
+            type: 'heading',
+            level: 2,
+            text: 'B-MAD Optional Lab',
+          },
+          {
+            type: 'text',
+            text: 'Use B-MAD when you want guided planning with specialized roles such as PM, Architect, and Analyst. Its strength is structured collaboration and broader planning support for complex transformations.',
+          },
+          {
+            type: 'list',
+            style: 'unordered',
+            items: [
+              'Best fit: larger transformations where architecture, planning, and team-role coordination are more important than a single strict migration artifact sequence',
+              'Good Northwind exercise: generate brownfield project context and document the current system so an architecture or planning workflow can begin from evidence',
+              'Expected outcome: students see how role-based planning differs from the SpecKit document pipeline',
+            ],
+          },
+          {
+            type: 'code',
+            language: 'bash',
+            code: `npx bmad-method install
+
+# In your AI workspace, start with the guide
+bmad-help
+
+# Example brownfield-oriented prompt
+bmad-help I have an existing .NET migration target called Northwind Global Services. What workflow should I use first to document the project and prepare for modernization?`,
+            caption: 'B-MAD optional lab starter commands',
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'Optional Exercise Deliverables',
+          },
+          {
+            type: 'table',
+            headers: ['Tool', 'Student Deliverable', 'What to Compare Back to SpecKit'],
+            rows: [
+              ['OpenSpec', 'One proposed brownfield change with proposal intent and spec direction', 'How much lighter the workflow feels, and what migration rigor you gain or lose'],
+              ['B-MAD', 'A brownfield documentation or planning output guided by a specialized agent', 'How role-based planning differs from the more prescriptive SpecKit artifact chain'],
+            ],
+          },
+        ],
+        quiz: lessonQuizzes['m-lesson-1-6'],
+      },
+
       /* ---------- Lesson 1.4 ---------- */
       {
         id: 'm-lesson-1-4',
-        number: 4,
+        number: 6,
         moduleId: 'm-module-1',
         title: 'Simulation: Cold Start',
         duration: '60 min',
@@ -258,7 +544,22 @@ export const migrationDay1Modules: Module[] = [
           { type: 'slideshow' as const, ...lessonSlides['m-lesson-1-4']! },
           {
             type: 'text',
-            text: 'Rather than isolated labs, the entire training is structured around a single progressive simulation. You receive a legacy application now and work it through the full spec-driven pipeline over 3 days.',
+            text: 'Rather than isolated labs, the entire training is structured around a single progressive simulation. You receive a legacy application now and work it through the full spec-driven pipeline over 3 days. By the time you begin this exercise, every student should already know why SpecKit is the required path and what artifacts they are expected to produce.',
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'What Students Must Accomplish in This Exercise',
+          },
+          {
+            type: 'list',
+            style: 'unordered',
+            items: [
+              'Initialize the working environment without getting blocked on setup',
+              'Create the first migration artifacts that will be reused for the rest of the course',
+              'Practice disciplined observation instead of jumping to solutions or cloud design too early',
+              'Produce a documented first-pass assessment of the Northwind system that another team could review',
+            ],
           },
           {
             type: 'heading',
@@ -344,6 +645,21 @@ cd northwind-legacy-app/NorthwindGlobal`,
             ],
           },
           {
+            type: 'heading',
+            level: 3,
+            text: 'What Good Looks Like',
+          },
+          {
+            type: 'table',
+            headers: ['Artifact / Outcome', 'Minimum Acceptable', 'Strong Submission'],
+            rows: [
+              ['Migration project initialization', 'Project is initialized and constitution exists', 'Constitution includes quality gates, compliance constraints, validation expectations, and rollback thinking'],
+              ['Repository scan', 'Student can name major folders and what they likely contain', 'Student can identify likely hotspots, hidden dependencies, and likely migration risks with file references'],
+              ['First impressions notes', 'Notes answer the template questions', 'Notes distinguish facts, hypotheses, and unknowns; each high-risk observation cites a probable source file or folder'],
+              ['Team debrief readiness', 'Student can explain what they found', 'Student can explain what they found, what they missed, and what evidence they still need before choosing a migration strategy'],
+            ],
+          },
+          {
             type: 'code',
             language: 'bash',
             code: `# Clone and build the legacy application
@@ -372,6 +688,40 @@ specify init northwind-migration --ai copilot`,
             ],
           },
           {
+            type: 'code',
+            language: 'markdown',
+            code: `# Northwind Cold Start Notes
+
+## 1. What seems immediately clear
+- Domain and major capabilities:
+- Main UI surface and user roles:
+
+## 2. What is unclear or suspicious
+- Files/classes that look overloaded or risky:
+- Areas that need SME validation:
+
+## 3. Where the business logic appears to live
+- Primary files:
+- Supporting config or utility locations:
+
+## 4. Integrations and operational dependencies
+- UNC paths / file shares:
+- Email / print / exports:
+- Batch jobs and scheduled work:
+
+## 5. Initial migration risks
+- Highest-risk behavior:
+- Highest-risk dependency:
+- Highest-risk operational process:
+
+## 6. Evidence log
+- Observation:
+  Source:
+  Confidence: high | medium | low
+`,
+            caption: 'Recommended note-taking format for the cold-start exercise',
+          },
+          {
             type: 'heading',
             level: 3,
             text: 'Deliverable',
@@ -379,6 +729,21 @@ specify init northwind-migration --ai copilot`,
           {
             type: 'text',
             text: 'An initialized migration project with a constitution, and a structured "first impressions" document.',
+          },
+          {
+            type: 'heading',
+            level: 3,
+            text: 'End-of-Lesson Success Criteria',
+          },
+          {
+            type: 'list',
+            style: 'unordered',
+            items: [
+              'Students can explain what the Northwind system appears to do without pretending certainty where evidence is weak',
+              'Students have produced a constitution and first-impressions artifact that can be reviewed by an instructor or another team',
+              'Students can name at least three likely migration risks and point to the files or folders that triggered those concerns',
+              'Students understand that the goal is not to solve the migration yet; the goal is to establish disciplined evidence and structured uncertainty',
+            ],
           },
           {
             type: 'callout',

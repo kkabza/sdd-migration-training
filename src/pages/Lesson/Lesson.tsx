@@ -50,6 +50,14 @@ export function LessonPage() {
       ]} />
 
       <div className={styles.header}>
+        <div className={styles.eyebrowRow}>
+          <span className={styles.eyebrow}>Migration Training</span>
+          <div className={styles.metaChips}>
+            <span className={styles.metaChip}>Day {day.number}</span>
+            <span className={styles.metaChip}>Module {mod.number}</span>
+            <span className={styles.metaChip}>Lesson {lesson.number}</span>
+          </div>
+        </div>
         <h1 className={styles.title}>{lesson.title}</h1>
         <span className={styles.duration}>{lesson.duration}</span>
       </div>

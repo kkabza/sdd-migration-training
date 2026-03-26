@@ -105,7 +105,7 @@ export function SlidePlayer({ audioSrc, slides }: Props) {
         {layout === 'bullets' && (
           <>
             <div className={styles.slideTitle}>{slide.title}</div>
-            {slide.subtitle && <p className={styles.slideSubtitle} style={{ color: 'rgba(255,255,255,0.7)', fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', marginBottom: '0.5rem' }}>{slide.subtitle}</p>}
+            {slide.subtitle && <p className={`${styles.slideSubtitle} ${styles.bulletSubtitle}`}>{slide.subtitle}</p>}
             {slide.bullets && (
               <ul className={styles.bulletList}>
                 {slide.bullets.map((b, j) => <li key={j}>{b}</li>)}
@@ -212,7 +212,7 @@ export function SlidePlayer({ audioSrc, slides }: Props) {
 
         <span className={styles.time}>{formatTime(currentTime)} / {formatTime(duration)}</span>
 
-        <Volume2 size={16} style={{ color: 'rgba(255,255,255,0.5)' }} />
+        <Volume2 size={16} style={{ color: 'var(--color-text-secondary)' }} />
         <input
           type="range"
           className={styles.volumeSlider}

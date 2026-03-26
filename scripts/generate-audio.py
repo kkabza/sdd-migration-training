@@ -29,6 +29,8 @@ LESSONS = {
     (1, 2): "module1-lesson2-spec-driven-pipeline",
     (1, 3): "module1-lesson3-migration-strategies",
     (1, 4): "module1-lesson4-cold-start",
+    (1, 5): "module1-lesson5-speckit-for-migration",
+    (1, 6): "module1-lesson6-optional-labs",
     (2, 1): "module2-lesson1-analyzing-legacy-code",
     (2, 2): "module2-lesson2-systematic-analysis",
     (2, 3): "module2-lesson3-dependency-mapping",
@@ -101,6 +103,7 @@ def main():
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--module", type=int, help="Generate audio for a specific module (1-6)")
     group.add_argument("--all", action="store_true", help="Generate audio for all modules")
+    parser.add_argument("--force", action="store_true", help="Overwrite existing MP3 files instead of skipping them")
     args = parser.parse_args()
 
     api_key = os.environ.get("ELEVEN_LABS_API_KEY")
@@ -131,10 +134,13 @@ def main():
             fail += 1
             continue
 
-        if output_path.exists():
+        if output_path.exists() and not args.force:
             print(f"  EXISTS: {output_path.name} (skipping)")
             ok += 1
             continue
+
+        if output_path.exists() and args.force:
+            print(f"  OVERWRITE: {output_path.name}")
 
         print(f"  Module {mod}, Lesson {les}: {stem}")
         if generate_audio(script_path, output_path, api_key):

@@ -1,0 +1,11 @@
+These optional labs exist for comparison, not substitution. They help advanced students see where lighter or role-based workflows fit in the broader ecosystem. They reinforce why the course standardizes on SpecKit for the required path. The real value is in comparing operating models, not collecting more commands.
+
+First, the OpenSpec optional lab. OpenSpec is best for lighter-weight brownfield change management. It is useful when you want to maintain current truth about a system and propose focused deltas against that truth. For the Northwind exercise, a good starting point is to capture one current behavior or one dependency as a proposed change. For example, you might document the nightly order processing job and identify what migration risks arise from moving it to the cloud. Then compare how that lighter process feels versus the more prescriptive SpecKit artifact chain.
+
+Second, the B-MAD optional lab. B-MAD is best for broader transformations where role-based planning adds value. It provides guided workflows with specialized roles such as PM, Architect, Analyst, and Developer. For the Northwind exercise, try generating brownfield project context and planning outputs from evidence. For instance, start the B-MAD guide with the Northwind legacy application and see what documentation or architecture workflow it suggests first. Then compare the collaborative planning strengths of that approach against the stricter migration pipeline you practiced with SpecKit.
+
+When comparing tools, focus on four dimensions. How much ceremony does each tool introduce? What rigor or traceability is gained or lost? Does the workflow center on migration artifacts, change proposals, or role-based planning? And which operating model would best fit a given delivery context?
+
+One important boundary condition: these optional labs do not replace the required SpecKit workflow for this course. They exist to build judgment about tool fit, not to fragment the class into different methods.
+
+Students who complete the optional labs should leave with one OpenSpec-style brownfield change or one B-MAD planning artifact, plus a clear comparison back to the SpecKit path used in the core labs.

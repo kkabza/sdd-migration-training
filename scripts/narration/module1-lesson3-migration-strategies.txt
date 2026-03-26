@@ -1,9 +1,13 @@
 Not every migration needs the same level of specification. The amount of spec work varies by migration strategy, and understanding this helps you invest effort where it matters most.
 
-At one end of the spectrum, retiring an application needs no spec work — just the decision rationale. Retaining requires minimal documentation of the current state. Rehosting needs a light touch — infrastructure mapping and a dependency list. Replatforming requires medium depth, focusing on the platform-specific adaptation points.
+Some strategies need light evidence, not full behavioral reconstruction. Retiring an application requires only the decision rationale and business impact. Retaining requires documentation of the current state and support model. Rehosting needs infrastructure mapping and a dependency list. Replatforming focuses on the adaptation points that will actually change.
 
-Then we get to where spec-driven migration really shines. Refactoring requires a full behavior spec plus architecture redesign. Re-architecting goes even deeper — domain decomposition and a new architecture. Rebuilding needs a full behavioral specification — what the system does, not how, because the implementation is entirely new. And replacing with a SaaS product requires a gap analysis — what the SaaS covers versus what needs custom work.
+Higher-spec strategies depend on understanding behavior before redesign. Refactoring means preserving behavior while redesigning architecture. Re-architecting means decomposing the domain and reframing the target system. Rebuilding requires deep behavioral specification because the implementation is entirely new. And replacing with a SaaS product requires a gap analysis between what the SaaS covers and what still needs custom business capability.
 
-The decision process is straightforward: run a lightweight spec pass first to understand complexity. Then choose the migration strategy based on evidence. Trying to choose the strategy before understanding the system is a common anti-pattern that leads to costly mid-migration strategy changes.
+Spec-driven migration adds the most value for refactor, rearchitect, rebuild, and complex replacement work — wherever understanding behavior is the critical path to a safe decision.
 
-You can't confidently choose the right strategy until you've specified what the system actually does. The spec informs the strategy — not the other way around.
+The decision process matters just as much: run a lightweight specification pass first to understand complexity. Then choose the strategy based on evidence. Do not start with the target architecture and hope the legacy analysis catches up later. Strategy changes midstream are often a signal that the initial evidence was weak.
+
+The deeper the behavioral change, the deeper the specification requirement. Shallow specs may be enough when infrastructure moves and behavior stays intact. Deep specs are mandatory when you are rebuilding or redesigning behavior. Tooling, governance, and validation all follow from the chosen spec depth.
+
+Match the depth of your specification to the depth of your migration strategy. A rehost does not need a full behavior spec. A rearchitect absolutely does.

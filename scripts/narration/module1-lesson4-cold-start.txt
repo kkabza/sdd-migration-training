@@ -1,11 +1,17 @@
-Welcome to Northwind Global Services. Here's the code repository. Here's a one-page README from twenty-nineteen. The previous architect left the company. Good luck.
+Welcome to Northwind Global Services. Here is the code repository. Here is a one-page README from twenty-nineteen. The previous architect left the company. Good luck.
 
-That's your starting point. Rather than isolated labs, the entire training is structured around a single progressive simulation. You receive a legacy application now and work it through the full spec-driven pipeline over three days.
+That is your starting point. Rather than isolated labs, the entire training is structured around a single progressive simulation carried across all three days. You receive a legacy application now and work it through the full spec-driven migration pipeline.
 
-The Northwind legacy application has every challenge you'd expect. A user interface with multi-page web forms and undocumented workflows. A business logic layer with rules scattered across code, configuration, and comments. A data layer with relational databases and stored procedures containing business logic. Batch processing with scheduled jobs that nobody documented. Integrations through file drops, queues, and API calls based on tribal knowledge. And legacy authentication with on-premises directories and shared credentials.
+By this point in Module 1, every student should already know that SpecKit is the required path and what artifacts come next. This exercise puts that knowledge into practice for the first time.
 
-This simulation is technology-agnostic by design. The process we're learning works whether the legacy system is .NET, Java, COBOL, Python, or anything else. We're focused entirely on the spec-flow process — how you analyze, specify, clarify, plan, and drive the migration.
+Students must accomplish four things in this exercise. First, initialize the working environment without getting blocked on setup. Second, create the first reusable migration artifacts. Third, practice disciplined observation instead of jumping straight to cloud design. And fourth, produce a first-pass assessment that another team could review.
 
-In this exercise, you'll initialize a spec-kit migration project, write a migration constitution covering quality gates and compliance constraints, explore the Northwind codebase for twenty minutes, document your first impressions using a structured template, and then compare observations across teams to see who found what.
+The Northwind codebase includes models, services, controllers, and data layers of a real MVC application. It also contains batch jobs, config helpers, and utility classes with hidden operational behavior. You will find UNC paths, NTLM authentication, EDI exports, and SMTP dependencies. There is enough ambiguity here to simulate a realistic brownfield modernization start.
 
-The instructor will then reveal what's actually in the codebase. How much did each team find in twenty minutes? What did everybody miss? This sets up the critical need for the systematic analysis we'll cover in Module 2.
+Why is it hard? Business logic is scattered across Services, Utilities, and Config. Hardcoded Windows paths point to infrastructure you do not control. Authentication and session handling are legacy and brittle. And nobody fully documented the scheduled jobs or their downstream consequences.
+
+Here are the exercise steps. Clone the repository and build it locally. Initialize the SpecKit migration workspace. Write the first migration constitution. Then explore the codebase for twenty minutes, starting with Models, Services, and BatchJobs.
+
+Use the first impressions template. What is immediately clear about the domain? What is unclear, suspicious, or fragile? Where does business logic appear to live? What external integrations can you identify quickly? And what is your initial risk assessment for migration?
+
+The point of the debrief is not to reward guessing. It is to show how much every team misses when analysis is ad hoc, and why systematic reverse engineering begins in Module 2.

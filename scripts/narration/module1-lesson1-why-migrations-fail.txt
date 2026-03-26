@@ -1,13 +1,15 @@
-Sixty to seventy percent of enterprise migrations exceed their budget or timeline. That's not a technology problem — it's a specification problem.
+Sixty to seventy percent of enterprise migrations exceed their budget or timeline. That is not a technology problem. It is a specification problem.
 
 The root cause is nearly always the same: teams start migrating before they truly understand what the legacy system does. Undocumented business logic buried deep in legacy code. Incomplete dependency mapping with integrations nobody mentioned. Assumption-driven architecture decisions instead of evidence-based ones. And the most expensive sentence in migration: "We thought we understood it."
 
-Every assumption that turns out to be wrong costs exponentially more to fix the later it's discovered. A missing integration found during planning costs hours. The same discovery during cutover costs weeks.
+Most failed migrations began with incomplete evidence, not bad cloud choices. The gap between what teams think the system does and what the system actually does compounds through every later phase. Every assumption that survives into implementation becomes harder and more expensive to unwind.
 
-Tools like AI Migrate have demonstrated impressive results in large-scale migration programmes — thirty percent productivity improvement on AI-assisted assessment tasks, with a path to fifty percent. Consistent assessments, reusable IP, and the ability to drive migration programmes at scale.
+A missing integration found during planning costs hours. The same discovery during cutover costs weeks. Migration failures usually begin as evidence failures long before they look like engineering failures.
 
-But deploying full tooling in customer tenants requires security approvals, compliance agreements, and data boundary negotiations. Not every engagement justifies that overhead.
+Scaled tooling like AI Migrate has already proven that structured, AI-assisted assessment produces real productivity gains. Quality improves when analysis patterns are consistent and reusable. And migration IP compounds across programmes. The real value is not speed alone — it is disciplined, repeatable understanding of what the legacy system actually does.
 
-Spec-driven migration delivers the same structured outcomes using just code analysis, GitHub Copilot, and the SDD pipeline. It can complement AI Migrate where it's deployed, or stand alone where it isn't.
+But many engagements still need disciplined migration outputs before full enterprise tooling is available. Spec-driven migration uses code analysis, GitHub Copilot, and the SDD pipeline to produce the same core artifacts. It complements larger tooling where it is present and stands on its own where it is not.
 
-Here's the key insight: migration is a specification problem, not a technology problem. If you can't specify what legacy code does, you can't verify the migration is correct. The spec becomes the contract between what the old system does and what the new system must do.
+Here is the key insight: migration is a specification problem first. If you cannot specify what the old system actually does, you cannot verify that the new system is correct.
+
+For the discussion exercise, reframe one failed migration story you know well as a missing-spec problem. What assumption turned out to be wrong? Was it a behavior gap, a dependency gap, a data gap, or an integration gap? What artifact should have existed before implementation started? And what decision would have changed if the spec had been explicit?
